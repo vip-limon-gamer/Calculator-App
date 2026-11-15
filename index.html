@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Calc Hub: Basic, Scientific, BMI, GNI and Age calculators</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Five free calculators that run in your browser: basic, scientific, BMI, GNI and age. Nothing you enter leaves your device.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.4.3/decimal.min.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calc Hub","applicationCategory":"UtilitiesApplication","operatingSystem":"All","browserRequirements":"Requires JavaScript and HTML5 support","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1>Calc Hub</h1><p>Five calculators that run entirely in your browser. Nothing you type is sent anywhere.</p></header>
+<nav aria-label="Calculators"><a href="#basic">Basic</a><a href="#scientific">Scientific</a><a href="#bmi">BMI</a><a href="#gni">GNI</a><a href="#age">Age</a></nav>
+<main>
+<section id="basic" hidden><h2>Basic calculator</h2><div id="cb"></div><p class="note">Follows order of operations: 3 + 3 × 5 = 18. Keyboard keys work while focus is inside this calculator.</p></section>
+<section id="scientific" hidden><h2>Scientific calculator</h2><div id="cs"></div><p class="note">−2^2 = −4 and (−2)^2 = 4. ×10ˣ multiplies by a power of ten; use xʸ for powers. Exact results at 0°, 90° and other cardinal angles; tan(90°) reports Undefined. Factorials run 0 to 170.</p></section>
+
+<section id="bmi" hidden><h2>BMI calculator</h2>
+<div class="g">
+<label>Units<select id="bu"><option value="m">Metric (cm, kg)</option><option value="i">US (ft, in, lb)</option></select></label>
+<label>Age in years<input id="ba" type="number" inputmode="numeric" min="2" max="120" value="30"></label>
+<label><span id="bhl">Height (cm)</span><input id="bh" type="number" inputmode="decimal" placeholder="170"></label>
+<label id="bil" hidden>Inches<input id="bh2" type="number" inputmode="decimal" placeholder="7"></label>
+<label><span id="bwl">Weight (kg)</span><input id="bw" type="number" inputmode="decimal" placeholder="70"></label>
+<label><span id="bxl">Waist, optional (cm)</span><input id="bx" type="number" inputmode="decimal"></label>
+<label>Population standard<select id="bs"><option value="asia">WHO Asia-Pacific (overweight from 23.0)</option><option value="who">WHO international</option><option value="china">China 2024 guideline</option></select></label>
+</div>
+<div class="out" id="bo" aria-live="polite">Enter height and weight.</div>
+<p class="note">For information and screening only. This is not medical advice, diagnosis or treatment. BMI can’t tell muscle from fat or show where fat sits, and it isn’t suited to children, pregnancy, or eating-disorder assessment. WHO’s 2004 review kept 25 and 30 as global cutoffs and treated 23.0, 27.5, 32.5 and 37.5 as public-health action points for Asian populations. Pair BMI with waist size: risk rises from 90 cm for South Asian, Chinese and Japanese men, 94 cm for white European men, and 80 cm for women. Never use this site in a medical emergency. Height and weight stay in your browser.</p></section>
+
+<section id="gni" hidden><h2>GNI calculator</h2>
+<div class="warn">GNI here means <b>Gross National Income</b>, a country-level measure. Looking for pay after tax? That’s a gross-to-net salary tool. Looking for diabetes GMI? Use the small calculator below.</div>
+<label>Mode<select id="gm"><option value="n">National income and per capita</option><option value="a">World Bank Atlas method</option><option value="c">FY2027 income classification</option></select></label>
+<div id="gn" class="g" style="margin-top:10px">
+<label>GDP<input id="n1" type="number" value="1000"></label><label>Primary income from abroad<input id="n2" type="number" value="80"></label><label>Primary income paid abroad<input id="n3" type="number" value="50"></label><label>Depreciation<input id="n4" type="number" value="120"></label><label>Mid-year population<input id="n5" type="number" value="10"></label></div>
+<div id="ga" class="g" style="margin-top:10px" hidden>
+<label>Exchange rate t−2<input id="a1" type="number" value="3"></label><label>Exchange rate t−1<input id="a2" type="number" value="4"></label><label>Exchange rate t<input id="a3" type="number" value="5"></label>
+<label>GDP deflator t−2<input id="a4" type="number" value="100"></label><label>GDP deflator t−1<input id="a5" type="number" value="125"></label><label>GDP deflator t<input id="a6" type="number" value="150"></label>
+<label>SDR deflator t−2<input id="a7" type="number" value="100"></label><label>SDR deflator t−1<input id="a8" type="number" value="105"></label><label>SDR deflator t<input id="a9" type="number" value="110"></label>
+<label>GNI in local currency<input id="a10" type="number" value="150000000000"></label><label>Mid-year population<input id="a11" type="number" value="15000000"></label></div>
+<div id="gc" class="g" style="margin-top:10px" hidden><label>Atlas GNI per capita (US$)<input id="c1" type="number" value="3500"></label><label>PPP GNI per capita, optional<input id="c2" type="number"></label></div>
+<div class="out" id="go" aria-live="polite"></div>
+<p class="note">Figures are national averages. They don’t show inequality, household affordability or informal activity, and Atlas dollars differ from purchasing power. Countries with several exchange-rate systems need weighted rates, and persistent high inflation limits Atlas accuracy. Classification output uses World Bank FY2027 thresholds (1 July 2026 to 30 June 2027, based on 2025 Atlas GNI per capita).</p>
+<details><summary>Glucose Management Indicator (GMI)</summary><div class="g"><label>Mean glucose (mg/dL)<input id="gg" type="number" inputmode="decimal"></label></div><div class="out" id="gmo" aria-live="polite" style="min-height:0">GMI % = 3.31 + 0.02392 × mean glucose. Needs 12 or more days of CGM data. Informational only, not medical advice.</div></details></section>
+
+<section id="age" hidden><h2>Age calculator</h2>
+<div class="g"><label>Date of birth<input id="ab" type="date"></label><label>Age as of<input id="at" type="date"></label>
+<label>If born on February 29<select id="af"><option value="28">Birthday is 28 Feb in common years</option><option value="1">Birthday is 1 Mar in common years</option></select></label></div>
+<div class="out" id="ao" aria-live="polite">Pick a date of birth.</div>
+<p class="note">Your birth date stays in your browser and is never added to a link.</p></section>
+</main>
+<footer>Calc Hub. Results are for general information. Your inputs are processed locally in your browser and never uploaded.</footer>
+<script src="app.js"></script></body></html>
