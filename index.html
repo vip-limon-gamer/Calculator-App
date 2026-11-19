@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calc Hub – Calculators &amp; Tools</title>
+<meta name="description" content="Standard and Casio fx-100MS style scientific calculator plus currency, units, loan, BMI, date, percent, base-N, statistics and equation tools.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧮%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<h1>Calc Hub</h1>
+<nav class="seg" id="tabs" aria-label="Calculators and tools"><button data-m="std" class="on" aria-pressed="true">Standard</button><button data-m="sci">Scientific</button><button data-m="cur">Currency</button><button data-m="uni">Units</button><button data-m="loan">Loan</button><button data-m="bmi">BMI</button><button data-m="dat">Age</button><button data-m="pct">Percent</button><button data-m="bas">Base-N</button><button data-m="sta">Statistics</button><button data-m="sol">Solver</button></nav>
+<main class="dev">
+<section class="std" id="std"><div class="sd"><div class="sx" id="sx"></div><div class="sv" id="sv">0</div></div><div class="sg" id="sg"></div><ul class="hl" id="hl"></ul></section>
+<section class="cas" id="sci" hidden>
+<div class="lcd"><div class="ann"><span id="aS">S</span><span id="aA">A</span><span id="aM">M</span><span id="aT">STO</span><span id="aR">RCL</span><span id="aH">HYP</span><span id="aD">D</span><span id="aRa">R</span><span id="aG">G</span><span id="aF">FIX</span><span id="aSc">SCI</span><span id="aE">ENG</span><span id="aI">OVR</span><span id="aC">CMPLX</span><span id="aSD">SD</span><span id="aBN">BASE</span><span id="aEQ">EQN</span><span id="aMT">MAT</span><span id="aVC">VCT</span></div>
+<div class="l1" id="l1"></div><div class="l2" id="l2">0</div></div>
+<div class="g6" id="g6"></div><div class="g5" id="g5"></div></section>
+<section class="tool" id="cur" hidden></section>
+<section class="tool" id="uni" hidden></section>
+<section class="tool" id="loan" hidden></section>
+<section class="tool" id="bmi" hidden></section>
+<section class="tool" id="dat" hidden></section>
+<section class="tool" id="pct" hidden></section>
+<section class="tool" id="bas" hidden></section>
+<section class="tool" id="sta" hidden></section>
+<section class="tool" id="sol" hidden></section>
+</main>
+<p class="note" id="note"></p>
+<script src="engine.js"></script>
+<script src="complex.js"></script>
+<script src="stat.js"></script>
+<script src="base.js"></script>
+<script src="eqn.js"></script>
+<script src="mat.js"></script>
+<script src="vct.js"></script>
+<script src="app.js"></script>
+<script src="tools.js"></script>
+</body></html>
